@@ -9,8 +9,8 @@ function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
   return (
-    <div
-      style={{ width: '75%' }}
+    <Box
+      sx={{ width: { xs: '70%', sm: '75%' } }}
       role="tabpanel"
       hidden={value !== index}
       id={`vertical-tabpanel-${index}`}
@@ -22,7 +22,7 @@ function TabPanel(props) {
           {children}
         </Box>
       )}
-    </div>
+    </Box>
   );
 }
 
@@ -72,7 +72,7 @@ const OptTabs = ({ value, onChange, exportedData, setExportedData }) => {
         onChange={handleChange}
         aria-label="Vertical tabs example"
         sx={{
-          width: '25%',
+          width: { xs: '30%', sm: '25%' },
           borderRight: 1,
           borderColor: 'gray',
           bgcolor: 'transparent',
@@ -119,7 +119,7 @@ const OptTabs = ({ value, onChange, exportedData, setExportedData }) => {
       <TabPanel value={value !== undefined ? value : tabValue} index={4}>
         <Paragraph exportedData={exportedData} setExportedData={setExportedData} />
       </TabPanel>
-    </Box>
+    </Box >
   );
 };
 

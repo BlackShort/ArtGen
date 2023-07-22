@@ -12,25 +12,26 @@ const Home = () => {
   };
 
   return (
-    <Stack p={"3% 3%"} height={"calc(100vh - (7vh + 6em))"}>
+    <Stack p={"3% 3%"} height={{ xs: '-webkit-fill-available', sm: "calc(100vh - (7vh + 6em))" }}>
       <Box
         sx={{
           display: "flex",
-          flexDirection: { sm: "column", md: "row" },
+          flexDirection: { xs: "column", sm: "row" },
           border: "2px solid gray",
           borderRadius: "10px",
           height: "100%",
-          overflow: "hidden",
+          overflow: { xs: 'auto', sm: "hidden" },
         }}
       >
-        <Box sx={{ width: "45%", display: "flex", flexDirection: "column" }}>
+        <Box sx={{ width: { xs: '-webkit-fill-available', sm: "45%" }, display: "flex", flexDirection: "column" }}>
           <Typography
             variant="h5"
             sx={{
               borderBottom: 1,
               borderColor: "gray",
               textAlign: "center",
-              padding: "0.5em ",
+              padding: { xs: '0.2em', sm: '0.5em' },
+              fontSize: { xs: '1.3rem' },
             }}
           >
             Add Components
@@ -43,13 +44,16 @@ const Home = () => {
           />
 
         </Box>
-        <div
-          style={{
-            width: "55%",
-            borderLeft: "0.5px solid gray",
+        <Box
+          sx={{
+            width: { xs: '-webkit-fill-available', sm: "55%" },
+            borderWidth: { xs: '0.5px 0 0 0', sm: "0 0 0 0.5px" },
+            borderStyle: 'solid',
+            borderColor: 'gray',
             display: "flex",
             position: "relative",
             height: "-webkit-fill-available",
+            minHeight: { xs: '15vh', sm: 'auto' }
           }}
         >
           <Stack width={"-webkit-fill-available"} gap={"1em"}>
@@ -71,7 +75,7 @@ const Home = () => {
               </Stack>
             )}
           </Stack>
-        </div>
+        </Box>
       </Box>
     </Stack>
   );
