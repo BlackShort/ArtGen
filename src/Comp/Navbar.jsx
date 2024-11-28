@@ -11,7 +11,7 @@ const Navbar = () => {
         ArtGen  ✨
       </Typography>
       <Avatar sx={{ width: { xs: '25px', sm: '40px' }, height: { xs: '25px', sm: '40px' } }}>B</Avatar>
-    </Stack >
+    </Stack>
   );
 }
 export default Navbar;
